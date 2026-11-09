@@ -41,6 +41,7 @@ public class VirtualPet {
             System.out.println("3. Comer");
             System.out.println("4. Bañar");
             System.out.println("5. Atacar");
+            System.out.println("6. Bailar");
             System.out.println("0. Salir");
             System.out.print("Elige una opción: ");
 
@@ -110,6 +111,10 @@ public class VirtualPet {
                        i++;
                 }
 
+            } else if (opcion == 6) {
+                // Llamo al metodo bailar y me quedo con la energia que devuelve
+                energia = bailar(nombre, energia);
+
             } else if (opcion == 0) {
                 System.out.println("Has salido del juego. ¡Hasta pronto!");
 
@@ -134,5 +139,13 @@ public class VirtualPet {
         }
 
             teclado.close();
+    }
+
+    // Metodo nuevo de la practica de Git: la mascota baila y gasta energia.
+    // Es static porque en mi programa todo esta en el main con variables locales,
+    // por eso recibe el nombre y la energia y devuelve la energia nueva.
+    public static int bailar(String nombre, int energia) {
+        System.out.println(nombre + " está bailando un mambo!");
+        return energia - 10;
     }
 }
